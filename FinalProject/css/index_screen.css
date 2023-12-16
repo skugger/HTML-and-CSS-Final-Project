@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    background-color: black;
+    color: lightgray;
+}
+
+html {
+    background-image: url("../media/KneeDeep_black.jpg");
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+header {
+	width: 100%;
+    text-align: center;
+}
+
+body {
+    width: 98%;
+    height: 100%;
+    font-family: 'Caveat Brush', cursive;
+    animation-name: shownum;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    background-color: black;
+    opacity: .85;
+    }
+
+.grid-container > div {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+}
+
+H1 {
+    width: 98%;
+    color: lightgray;
+    font-size: 3em;
+    animation-duration: 2.5s;
+    animation-name: bannerslideright;
+    text-align: center;
+    text-shadow: 3px 3px 3px orange;
+}
+
+H2 {
+    width: 98%;
+    color: lightgray;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px orange;
+}
+
+nav a {
+    width: 300px;
+    background-color: red;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+nav a:link, nav a:hover {
+    text-align: center;
+    width: 300px;
+    font-size: 24pt;
+    text-decoration: none;
+    display: block;
+    animation-duration: 2.5s;
+    animation-name: menuslideright;
+    box-shadow: 2px 2px 2px orange;
+}
+
+nav a:hover {
+    background-color: azure;
+    color: red;
+}
+
+article {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    flex-wrap:wrap;
+}
+
+article > section {
+    flex:1;
+    min-width:100%;
+}
+
+.right {
+    max-width: 100%;
+    text-align: left;
+}
+img {
+    max-width: 98%;
+    height: auto;
+    box-shadow: 2px 2px orange;
+}
+
+.menu {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    font-size: 1.5em;
+    opacity: 0.85;
+/*  background-color: darkgray;
+    color: black;
+    border-radius: 20px;
+    opacity: 0;
+    padding: 10px; */
+}
+
+.iconbar {
+    width: 98%;
+    overflow: auto;
+    margin-top: 5%;
+}
+.iconbar a {
+    float: left;
+    text-align: center;
+    background-color: black;
+    width: 20%;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    color: lightgray;
+    font-size: 40px;
+}
+.iconbar a:hover {
+    background-color: lightgray;
+    color: red;
+    border-radius: 5px;
+}
+
+@keyframes menuslideright {
+    from {
+        margin-left: -60%;
+        }
+    
+    to {
+        margin-left: -5%;
+        }
+}
+
+@keyframes bannerslideright {
+    from {
+        margin-left: -80%;
+        width: 50%;
+        }
+    
+    to {
+        margin-left: 0%;
+        width: 98%;
+        }
+}
+
+@keyframes shownum {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+.title      { grid-area:h; }
+.menu       { grid-area:n; }
+.content    { grid-area:m; }
+.right      { grid-area:a; }
+.contact    { grid-area:f; }
+
+/* Phones */
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'h h h'
+		'n n n'
+		'm m m'
+        'a a a'
+		'f f f';
+	grid-gap: 5px;
+	padding: 5px;
+}
+
+/* Tablets 
+@media only screen and (min-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'h h h h'
+            'n n n n'
+            'm m m a'
+            'f f f f';
+        grid-gap: 5px;
+        padding: 5px;
+     }
+     nav a {
+        text-align: center;
+        font-size: 5vw;
+     }
+     H1 {
+        font-size: 5vw;
+     }
+} */
+
+/* Desktop */
+@media only screen and (min-width: 1000px) {
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'h h h h h h'
+		'n n m m m a'
+		'f f f f f f';
+	grid-gap: 0px;
+	padding: 0px;
+    }
+    nav {
+        width: 50%;
+    }
+    nav a:link, nav a:hover {
+        text-align: right;
+        font-size: 2em;
+        margin-left: -5%;
+    }
+    H1 {
+        font-size: 3.5em;
+     }
+    H2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1.25em;
+    }
+}
